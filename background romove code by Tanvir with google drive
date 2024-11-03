@@ -1,0 +1,37 @@
+!pip install rembg
+from google.colab import drive
+drive.mount('/content/drive')
+import os
+
+# Define input and output directories in your Google Drive
+input_dir = '/content/drive/MyDrive/Data for Leaf Disease/Zucchini'  # Change to your input path
+output_dir = '/content/drive/MyDrive/Data for Leaf Disease/Background Removed/Zucchini'  # Change to your output path
+
+# Create directories if they don't exist
+os.makedirs(input_dir, exist_ok=True)
+os.makedirs(output_dir, exist_ok=True)
+from rembg import remove
+
+# Process images and remove backgrounds
+if os.path.exists(input_dir) and os.listdir(input_dir):
+    for filename in os.listdir(input_dir):
+        if filename.endswith(('.png', '.jpg', '.jpeg')):
+            input_path = os.path.join(input_dir, filename)
+            output_path = os.path.join(output_dir, filename)
+
+            # Open the input image
+            with open(input_path, 'rb') as input_file:
+                input_image = input_file.read()
+
+            # Remove the background
+            output_image = remove(input_image)
+
+            # Save the output image
+            with open(output_path, 'wb') as output_file:
+                output_file.write(output_image)
+
+            print(f'Processed: {filename}')
+else:
+    print("The input_images directory does not exist or is empty.")
+
+print('Background removal completed for all images.')
