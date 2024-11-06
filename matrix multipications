@@ -1,0 +1,25 @@
+rows_X = int(input("Enter the rows of matrix X: "))
+cols_X = int(input("Enter the columns of matrix X: "))
+print("\n")
+X = []
+for i in range(rows_X):
+    row = [int(input(f"Enter element X[{i}][{j}]: ")) for j in range(cols_X)]
+    X.append(row)
+rows_Y = int(input("Enter the rows of matrix Y: "))
+cols_Y = int(input("Enter the columns of matrix Y: "))
+print("\n")
+Y = []
+for i in range(rows_Y):
+    row = [int(input(f"Enter element Y[{i}][{j}]: ")) for j in range(cols_Y)]
+    Y.append(row)
+if cols_X != rows_Y:
+    print("Multiplication is not possible")
+else:
+    result_matrix = [[0] * cols_Y for _ in range(rows_X)]
+    for i in range(rows_X):
+        for j in range(cols_Y):
+            for k in range(cols_X):
+                result_matrix[i][j] += X[i][k] * Y[k][j]
+    print("Result of multiplication:")
+    for row in result_matrix:
+        print(row)
