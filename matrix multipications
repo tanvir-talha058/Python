@@ -29,5 +29,6 @@ else:
                 result_matrix[i][j] += X[i][k] * Y[k][j]
 
     print("Result of multiplication:")
+
     for row in result_matrix:
         print(row)
