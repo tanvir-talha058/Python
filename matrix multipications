@@ -1,13 +1,17 @@
 rows_X = int(input("Enter the rows of matrix X: "))
 cols_X = int(input("Enter the columns of matrix X: "))
+
 print("\n")
 X = []
+
 for i in range(rows_X):
     row = [int(input(f"Enter element X[{i}][{j}]: ")) for j in range(cols_X)]
     X.append(row)
 rows_Y = int(input("Enter the rows of matrix Y: "))
 cols_Y = int(input("Enter the columns of matrix Y: "))
+
 print("\n")
+
 Y = []
 for i in range(rows_Y):
     row = [int(input(f"Enter element Y[{i}][{j}]: ")) for j in range(cols_Y)]
