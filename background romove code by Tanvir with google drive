@@ -15,6 +15,7 @@ os.makedirs(output_dir, exist_ok=True)
 from rembg import remove
 
 # Process images and remove backgrounds
+
 if os.path.exists(input_dir) and os.listdir(input_dir):
     for filename in os.listdir(input_dir):
         if filename.endswith(('.png', '.jpg', '.jpeg')):
