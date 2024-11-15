@@ -20,7 +20,6 @@ if os.path.exists(input_dir) and os.listdir(input_dir):
             output_path = os.path.join(output_dir, filename)
 
             # Open the input image
-
             with open(input_path, 'rb') as input_file:
                 input_image = input_file.read()
 
