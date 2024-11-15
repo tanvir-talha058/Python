@@ -4,7 +4,6 @@ drive.mount('/content/drive')
 import os
 
 # Define input and output directories in your Google Drive
-
 input_dir = '/content/drive/MyDrive/Data for Leaf Disease/Zucchini'  # Change to your input path
 output_dir = '/content/drive/MyDrive/Data for Leaf Disease/Background Removed/Zucchini'  # Change to your output path
 
