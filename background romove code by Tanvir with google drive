@@ -28,6 +28,7 @@ if os.path.exists(input_dir) and os.listdir(input_dir):
                 input_image = input_file.read()
 
             # Remove the background
+
             output_image = remove(input_image)
 
             # Save the output image
