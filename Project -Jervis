@@ -1,0 +1,21 @@
+import pyttsx3
+import speechRecognition as sr
+
+engine=pyttsx3.init('sapi5')
+voices=engine.getProperty('voices')
+engine.setProperty('voices', voices[1].id)
+
+def speak(audio):
+    engine.say(audio)
+    print(audio)
+    engine.runAndWait()
+
+def takecommand():
+    r= sr.Recognizer()
+    with sr.Microphone() as source:
+        print("I'm Listenning Dear...")
+        r.pause_thresholod=1
+        audio= r.listen(source,timeout=1, phrase_time_limit=5)
+if __name__=="__main__":
+    speak("Hi Tanvir , This is Edu-Buddy")
+
