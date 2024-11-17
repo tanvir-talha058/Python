@@ -1,0 +1,8 @@
+d=181,212,123,312,4
+d=list()
+
+def reverse_sort():
+  d=list()
+  d.sort(reverse=True)
+  print(d)
+reverse_sort()
