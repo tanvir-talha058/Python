@@ -1,7 +1,9 @@
 x="fantastic"
+
 def my_func():
   x="awesome"
   print("the car is "+x)
+
 my_func()
 print("the car is "+x)
 
